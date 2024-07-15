@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmsq7kmxju70o"]
+
+[ext_resource type="Script" path="res://scripts/player_1.gd" id="1_wjnb1"]
+[ext_resource type="Texture2D" uid="uid://boil5tveisyc7" path="res://sprites/cars.png" id="2_vkc1d"]
+[ext_resource type="AudioStream" uid="uid://dtjhwsx2hoauh" path="res://sound/Hit_Hurt11.wav" id="3_ftvam"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxjeh"]
+size = Vector2(15, 25)
+
+[node name="Player1" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_wjnb1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_fxjeh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_vkc1d")
+hframes = 7
+
+[node name="LeftWheelDrift" type="CPUParticles2D" parent="."]
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+position = Vector2(-6.095, -7.56)
+emitting = false
+amount = 10
+lifetime = 0.5
+direction = Vector2(-1, 0)
+spread = 9.55
+gravity = Vector2(0, 0)
+initial_velocity_min = 155.95
+initial_velocity_max = 155.95
+scale_amount_min = 4.0
+scale_amount_max = 6.0
+
+[node name="RightWheelDrift" type="CPUParticles2D" parent="."]
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+position = Vector2(-6.095, 7.56)
+emitting = false
+amount = 10
+lifetime = 0.5
+direction = Vector2(-1, 0)
+spread = 9.55
+gravity = Vector2(0, 0)
+initial_velocity_min = 155.95
+initial_velocity_max = 155.95
+scale_amount_min = 4.0
+scale_amount_max = 6.0
+
+[node name="Smoke" type="CPUParticles2D" parent="."]
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+position = Vector2(-11.815, -2.175)
+emitting = false
+amount = 25
+lifetime = 0.5
+direction = Vector2(-1, 0)
+spread = 41.85
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 25.0
+scale_amount_max = 2.0
+
+[node name="CollisionSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ftvam")
+volume_db = -30.0
