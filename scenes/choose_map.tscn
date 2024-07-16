@@ -1,0 +1,155 @@
+[gd_scene load_steps=17 format=3 uid="uid://c34syoq1xxtx3"]
+
+[ext_resource type="Texture2D" uid="uid://w5cw17px38cn" path="res://maps/1.png" id="1_gfn6h"]
+[ext_resource type="Script" path="res://scripts/choose_map.gd" id="1_iy4ug"]
+[ext_resource type="Texture2D" uid="uid://nxkebery7tia" path="res://maps/2.png" id="2_orvy5"]
+[ext_resource type="Texture2D" uid="uid://c4n7hl72kc8nn" path="res://maps/3.png" id="3_vb461"]
+[ext_resource type="Texture2D" uid="uid://b1te1ybm87svg" path="res://maps/4.png" id="4_8kpfw"]
+[ext_resource type="Texture2D" uid="uid://cmywf1euxybij" path="res://sprites/arrow.png" id="4_gknjx"]
+[ext_resource type="Texture2D" uid="uid://buq36mhn42psb" path="res://sprites/car1.png" id="5_l4t5f"]
+[ext_resource type="Texture2D" uid="uid://dys6crekjp1wb" path="res://sprites/car2.png" id="6_u66so"]
+[ext_resource type="Texture2D" uid="uid://y4kfwrspim4" path="res://maps/6.png" id="6_uey1g"]
+[ext_resource type="FontFile" uid="uid://cwo2tc2qtq41u" path="res://karmatic-arcade/ka1.ttf" id="6_x0sx8"]
+[ext_resource type="Texture2D" uid="uid://blo3km28xqob4" path="res://maps/5.png" id="7_1s5qn"]
+[ext_resource type="Texture2D" uid="uid://bqk0fvrej6lgc" path="res://sprites/car3.png" id="7_fsfed"]
+[ext_resource type="Texture2D" uid="uid://cjdsjoa0pyosm" path="res://sprites/car4.png" id="8_f54gi"]
+[ext_resource type="Texture2D" uid="uid://nelk7gqvto52" path="res://sprites/car5.png" id="9_otu8t"]
+[ext_resource type="Texture2D" uid="uid://bakyg4n67wdrb" path="res://sprites/car6.png" id="10_fdkcs"]
+[ext_resource type="Texture2D" uid="uid://bqr6adxx54bb5" path="res://sprites/car7.png" id="11_tldix"]
+
+[node name="choose_map" type="Node2D"]
+script = ExtResource("1_iy4ug")
+
+[node name="BackGround" type="ColorRect" parent="."]
+offset_right = 1200.0
+offset_bottom = 712.0
+color = Color(0.980392, 0.580392, 0.584314, 1)
+
+[node name="Back" type="Button" parent="."]
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 284.0
+offset_bottom = 92.0
+theme_override_fonts/font = ExtResource("6_x0sx8")
+theme_override_font_sizes/font_size = 70
+text = "Back"
+flat = true
+
+[node name="Go" type="Button" parent="."]
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+offset_left = 1048.0
+offset_top = 616.0
+offset_right = 1180.0
+offset_bottom = 703.0
+theme_override_fonts/font = ExtResource("6_x0sx8")
+theme_override_font_sizes/font_size = 70
+text = "go
+"
+flat = true
+
+[node name="Maps" type="CanvasLayer" parent="."]
+
+[node name="Map0" type="Sprite2D" parent="Maps"]
+position = Vector2(600, 248)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_gfn6h")
+
+[node name="Map1" type="Sprite2D" parent="Maps"]
+visible = false
+position = Vector2(600, 248)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_orvy5")
+
+[node name="Map2" type="Sprite2D" parent="Maps"]
+visible = false
+position = Vector2(600, 248)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_vb461")
+
+[node name="Map3" type="Sprite2D" parent="Maps"]
+visible = false
+position = Vector2(600, 248)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_8kpfw")
+
+[node name="Map4" type="Sprite2D" parent="Maps"]
+visible = false
+position = Vector2(600, 248)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_1s5qn")
+
+[node name="Map5" type="Sprite2D" parent="Maps"]
+visible = false
+position = Vector2(600, 248)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_uey1g")
+
+[node name="Next" type="Button" parent="."]
+offset_left = 984.0
+offset_top = 152.0
+offset_right = 1056.0
+offset_bottom = 224.0
+scale = Vector2(2.93, 2.93)
+icon = ExtResource("4_gknjx")
+flat = true
+
+[node name="Previous" type="Button" parent="."]
+offset_left = 216.0
+offset_top = 360.0
+offset_right = 288.0
+offset_bottom = 432.0
+rotation = 3.14159
+scale = Vector2(2.93, 2.93)
+icon = ExtResource("4_gknjx")
+flat = true
+
+[node name="Time_Attack" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Time_Attack"]
+position = Vector2(344, 496)
+rotation = 1.5708
+scale = Vector2(3, 3)
+texture = ExtResource("5_l4t5f")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Time_Attack"]
+position = Vector2(344, 552)
+rotation = 1.5708
+scale = Vector2(3, 3)
+texture = ExtResource("6_u66so")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Time_Attack"]
+position = Vector2(344, 608)
+rotation = 1.5708
+scale = Vector2(3, 3)
+texture = ExtResource("7_fsfed")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Time_Attack"]
+position = Vector2(344, 664)
+rotation = 1.5708
+scale = Vector2(3, 3)
+texture = ExtResource("8_f54gi")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Time_Attack"]
+position = Vector2(664, 496)
+rotation = 1.5708
+scale = Vector2(3, 3)
+texture = ExtResource("9_otu8t")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Time_Attack"]
+position = Vector2(664, 552)
+rotation = 1.5708
+scale = Vector2(3, 3)
+texture = ExtResource("10_fdkcs")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Time_Attack"]
+position = Vector2(664, 608)
+rotation = 1.5708
+scale = Vector2(3, 3)
+texture = ExtResource("11_tldix")
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Go" to="." method="_on_go_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]

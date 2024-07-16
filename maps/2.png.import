@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buq36mhn42psb"
-path="res://.godot/imported/car1.png-9b1e4a256d8fc8ff91516ff27c79c276.ctex"
+uid="uid://nxkebery7tia"
+path="res://.godot/imported/2.png-b0fa216af948d168963e7c8724131e68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/car1.png"
-dest_files=["res://.godot/imported/car1.png-9b1e4a256d8fc8ff91516ff27c79c276.ctex"]
+source_file="res://maps/2.png"
+dest_files=["res://.godot/imported/2.png-b0fa216af948d168963e7c8724131e68.ctex"]
 
 [params]
 

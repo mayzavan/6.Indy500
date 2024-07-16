@@ -1,0 +1,114 @@
+[gd_scene load_steps=3 format=3 uid="uid://bppo7ln657qhh"]
+
+[ext_resource type="FontFile" uid="uid://cwo2tc2qtq41u" path="res://karmatic-arcade/ka1.ttf" id="1_2a2m1"]
+[ext_resource type="Script" path="res://scripts/choose_mode.gd" id="1_vymrq"]
+
+[node name="choose_mode" type="Node2D"]
+script = ExtResource("1_vymrq")
+
+[node name="BackGround" type="ColorRect" parent="."]
+offset_right = 1200.0
+offset_bottom = 712.0
+color = Color(0.980392, 0.580392, 0.584314, 1)
+
+[node name="Test_Track" type="CanvasLayer" parent="."]
+
+[node name="Test_Track" type="Button" parent="Test_Track"]
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+offset_left = 656.0
+offset_top = 368.0
+offset_right = 1140.0
+offset_bottom = 444.0
+theme_override_fonts/font = ExtResource("1_2a2m1")
+theme_override_font_sizes/font_size = 60
+text = "Test Track
+"
+flat = true
+
+[node name="Free_Ride" type="CanvasLayer" parent="."]
+
+[node name="Free_Ride" type="Button" parent="Free_Ride"]
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+offset_left = 40.0
+offset_top = 272.0
+offset_right = 459.0
+offset_bottom = 348.0
+theme_override_fonts/font = ExtResource("1_2a2m1")
+theme_override_font_sizes/font_size = 60
+text = "Free ride"
+flat = true
+
+[node name="Time_attack" type="CanvasLayer" parent="."]
+
+[node name="Time_attack" type="Button" parent="Time_attack"]
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+offset_left = 664.0
+offset_top = 176.0
+offset_right = 1171.0
+offset_bottom = 252.0
+theme_override_fonts/font = ExtResource("1_2a2m1")
+theme_override_font_sizes/font_size = 60
+text = "Time attack"
+flat = true
+
+[node name="Drift" type="CanvasLayer" parent="."]
+
+[node name="Drift" type="Button" parent="Drift"]
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+offset_left = 56.0
+offset_top = 448.0
+offset_right = 293.0
+offset_bottom = 524.0
+theme_override_fonts/font = ExtResource("1_2a2m1")
+theme_override_font_sizes/font_size = 60
+text = "Drift"
+flat = true
+
+[node name="Time_Challenge" type="CanvasLayer" parent="."]
+
+[node name="Time Challenge" type="Button" parent="Time_Challenge"]
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+offset_left = 16.0
+offset_top = 64.0
+offset_right = 682.0
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("1_2a2m1")
+theme_override_font_sizes/font_size = 60
+text = "time challenge"
+flat = true
+
+[node name="Race" type="CanvasLayer" parent="."]
+
+[node name="Race" type="Button" parent="Race"]
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+offset_left = 880.0
+offset_top = 40.0
+offset_right = 1100.0
+offset_bottom = 116.0
+theme_override_fonts/font = ExtResource("1_2a2m1")
+theme_override_font_sizes/font_size = 60
+text = "race
+"
+flat = true
+
+[node name="Main_menu" type="CanvasLayer" parent="."]
+
+[node name="Main_menu" type="Button" parent="Main_menu"]
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+offset_left = 344.0
+offset_top = 608.0
+offset_right = 763.0
+offset_bottom = 684.0
+theme_override_fonts/font = ExtResource("1_2a2m1")
+theme_override_font_sizes/font_size = 60
+text = "main menu
+"
+flat = true
+
+[connection signal="pressed" from="Test_Track/Test_Track" to="." method="_on_test_track_pressed"]
+[connection signal="pressed" from="Free_Ride/Free_Ride" to="." method="_on_free_ride_pressed"]
+[connection signal="pressed" from="Time_attack/Time_attack" to="." method="_on_time_attack_pressed"]
+[connection signal="pressed" from="Drift/Drift" to="." method="_on_drift_pressed"]
+[connection signal="pressed" from="Time_Challenge/Time Challenge" to="." method="_on_time_challenge_pressed"]
+[connection signal="pressed" from="Race/Race" to="." method="_on_race_pressed"]
+[connection signal="pressed" from="Main_menu/Main_menu" to="." method="_on_main_menu_pressed"]

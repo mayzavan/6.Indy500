@@ -1,8 +1,181 @@
-[gd_scene format=3 uid="uid://mlatia6ff2ci"]
+[gd_scene load_steps=11 format=3 uid="uid://mlatia6ff2ci"]
+
+[ext_resource type="Texture2D" uid="uid://buq36mhn42psb" path="res://art/sprites/car1.png" id="1_h0knd"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_qlwb2"]
+[ext_resource type="FontFile" uid="uid://cwo2tc2qtq41u" path="res://karmatic-arcade/ka1.ttf" id="1_wrwbc"]
+[ext_resource type="Texture2D" uid="uid://dys6crekjp1wb" path="res://art/sprites/car2.png" id="2_yn1xc"]
+[ext_resource type="Texture2D" uid="uid://bqk0fvrej6lgc" path="res://art/sprites/car3.png" id="3_mf8jm"]
+[ext_resource type="Texture2D" uid="uid://cjdsjoa0pyosm" path="res://art/sprites/car4.png" id="4_kvaku"]
+[ext_resource type="Texture2D" uid="uid://nelk7gqvto52" path="res://art/sprites/car5.png" id="5_mkxs4"]
+[ext_resource type="Texture2D" uid="uid://bakyg4n67wdrb" path="res://art/sprites/car6.png" id="6_ypsvn"]
+[ext_resource type="Texture2D" uid="uid://bqr6adxx54bb5" path="res://art/sprites/car7.png" id="7_68x67"]
+[ext_resource type="Texture2D" uid="uid://pujyx4btb40f" path="res://art/sprites/car0.png" id="8_d0lau"]
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_qlwb2")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="BackGround" type="ColorRect" parent="."]
 offset_right = 1200.0
 offset_bottom = 712.0
+color = Color(0.980392, 0.580392, 0.584314, 1)
+
+[node name="Title2" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="Title2"]
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+offset_left = 104.0
+offset_top = 32.0
+offset_right = 1101.0
+offset_bottom = 151.0
+theme_override_fonts/font = ExtResource("1_wrwbc")
+theme_override_font_sizes/font_size = 106
+text = "1 - bit racers"
+
+[node name="ColorRect2" type="ColorRect" parent="Title2"]
+offset_left = 152.0
+offset_top = 160.0
+offset_right = 1144.0
+offset_bottom = 176.0
 color = Color(0.160784, 0.0862745, 0.113725, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Title2"]
+offset_left = 176.0
+offset_top = 184.0
+offset_right = 1168.0
+offset_bottom = 200.0
+color = Color(0.160784, 0.0862745, 0.113725, 1)
+
+[node name="Cars" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Cars"]
+position = Vector2(319.76, 317.76)
+rotation = -3.14159
+scale = Vector2(3.86, 3.86)
+texture = ExtResource("1_h0knd")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Cars"]
+position = Vector2(319.76, 577.76)
+scale = Vector2(3.86, 3.86)
+texture = ExtResource("2_yn1xc")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Cars"]
+position = Vector2(449.76, 447.76)
+rotation = -1.5708
+scale = Vector2(3.86, 3.86)
+texture = ExtResource("3_mf8jm")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Cars"]
+position = Vector2(189.76, 447.76)
+rotation = 1.5708
+scale = Vector2(3.86, 3.86)
+texture = ExtResource("4_kvaku")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Cars"]
+position = Vector2(229.76, 537.76)
+rotation = 0.785398
+scale = Vector2(3.86, 3.86)
+texture = ExtResource("5_mkxs4")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Cars"]
+position = Vector2(409.76, 537.76)
+rotation = -0.785398
+scale = Vector2(3.86, 3.86)
+texture = ExtResource("6_ypsvn")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Cars"]
+position = Vector2(409.76, 357.76)
+rotation = -2.35619
+scale = Vector2(3.86, 3.86)
+texture = ExtResource("7_68x67")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Cars"]
+position = Vector2(229.76, 357.76)
+rotation = 2.35619
+scale = Vector2(3.86, 3.86)
+texture = ExtResource("8_d0lau")
+
+[node name="Buttons" type="CanvasLayer" parent="."]
+
+[node name="Play" type="Button" parent="Buttons"]
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+offset_left = 632.0
+offset_top = 208.0
+offset_right = 1042.0
+offset_bottom = 306.0
+theme_override_fonts/font = ExtResource("1_wrwbc")
+theme_override_font_sizes/font_size = 80
+text = "Play"
+flat = true
+
+[node name="Line" type="ColorRect" parent="Buttons/Play"]
+layout_mode = 0
+offset_top = 106.0
+offset_right = 416.0
+offset_bottom = 122.0
+color = Color(0.160784, 0.0862745, 0.113725, 1)
+
+[node name="Settings" type="Button" parent="Buttons"]
+visible = false
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+offset_left = 592.0
+offset_top = 330.0
+offset_right = 1107.0
+offset_bottom = 428.0
+theme_override_fonts/font = ExtResource("1_wrwbc")
+theme_override_font_sizes/font_size = 80
+text = "Settings"
+flat = true
+
+[node name="Line" type="ColorRect" parent="Buttons/Settings"]
+layout_mode = 0
+offset_top = 104.0
+offset_right = 528.0
+offset_bottom = 120.0
+color = Color(0.160784, 0.0862745, 0.113725, 1)
+
+[node name="Credits" type="Button" parent="Buttons"]
+visible = false
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+offset_left = 592.0
+offset_top = 450.0
+offset_right = 1107.0
+offset_bottom = 548.0
+theme_override_fonts/font = ExtResource("1_wrwbc")
+theme_override_font_sizes/font_size = 80
+text = "Credits
+"
+flat = true
+
+[node name="Line" type="ColorRect" parent="Buttons/Credits"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 104.0
+offset_right = 512.0
+offset_bottom = 120.0
+color = Color(0.160784, 0.0862745, 0.113725, 1)
+
+[node name="Quit" type="Button" parent="Buttons"]
+visible = false
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+offset_left = 592.0
+offset_top = 568.0
+offset_right = 1107.0
+offset_bottom = 666.0
+theme_override_fonts/font = ExtResource("1_wrwbc")
+theme_override_font_sizes/font_size = 80
+text = "Quit
+"
+flat = true
+
+[node name="Line" type="ColorRect" parent="Buttons/Quit"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 104.0
+offset_right = 408.0
+offset_bottom = 120.0
+color = Color(0.160784, 0.0862745, 0.113725, 1)
+
+[connection signal="pressed" from="Buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Buttons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Buttons/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Buttons/Quit" to="." method="_on_quit_pressed"]

@@ -1,11 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://cmsq7kmxju70o"]
 
 [ext_resource type="Script" path="res://scripts/player_1.gd" id="1_wjnb1"]
-[ext_resource type="Texture2D" uid="uid://boil5tveisyc7" path="res://sprites/cars.png" id="2_vkc1d"]
-[ext_resource type="AudioStream" uid="uid://dtjhwsx2hoauh" path="res://sound/Hit_Hurt11.wav" id="3_ftvam"]
+[ext_resource type="Texture2D" uid="uid://boil5tveisyc7" path="res://art/sprites/cars.png" id="2_vkc1d"]
+[ext_resource type="AudioStream" uid="uid://dtjhwsx2hoauh" path="res://art/sound/Hit_Hurt11.wav" id="3_ftvam"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxjeh"]
-size = Vector2(15, 25)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_spjtp"]
+radius = 7.0
+height = 26.0
 
 [node name="Player1" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -13,7 +14,7 @@ script = ExtResource("1_wjnb1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-shape = SubResource("RectangleShape2D_fxjeh")
+shape = SubResource("CapsuleShape2D_spjtp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
