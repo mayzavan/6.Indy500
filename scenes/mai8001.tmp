@@ -49,8 +49,6 @@ offset_bottom = 200.0
 color = Color(0.160784, 0.0862745, 0.113725, 1)
 
 [node name="Cars" type="CanvasLayer" parent="."]
-offset = Vector2(274.475, 441.47)
-transform = Transform2D(1, 0, 0, 1, 274.475, 441.47)
 
 [node name="Sprite2D" type="Sprite2D" parent="Cars"]
 position = Vector2(0, -130.24)
@@ -179,7 +177,7 @@ color = Color(0.160784, 0.0862745, 0.113725, 1)
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = 560.0
-offset_top = 448.0
+offset_top = 336.0
 offset_right = 1144.0
 offset_bottom = 576.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_qpn85")
@@ -187,10 +185,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_qpn85")
 [node name="Label" type="Label" parent="Panel"]
 modulate = Color(0.980392, 0.580392, 0.584314, 1)
 layout_mode = 0
-offset_left = 8.0
-offset_top = 24.0
-offset_right = 80.0
-offset_bottom = 105.0
+offset_top = 120.0
+offset_right = 72.0
+offset_bottom = 201.0
 theme_override_fonts/font = ExtResource("1_wrwbc")
 theme_override_font_sizes/font_size = 21
 text = "To be done"

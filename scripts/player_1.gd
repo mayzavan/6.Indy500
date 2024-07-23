@@ -16,25 +16,29 @@ var veltraction
 var steering_angle_base = 20
 var wheel_base = 0.2
 var traction_base = 1
-var traction
+var traction = 1
 var steering_angle
 var acceleration = Vector2.ZERO
 var velocity = Vector2.ZERO
 var steer_direction
 var turning
 var collision
+var turn = 0
+var colliding = false
 ###################################################
-#var bestdrift = 0
-#var score = 0
 var main
+
+var tile
+var tilemap
 
 func _ready():
 	main = get_parent()
+	tilemap = $"../TileMap"
 	chosen_car(Global.chosen_car)
 
 func chosen_car(num):
 	match num:
-		1:
+		0:
 			$Sprite2D.frame = 0
 			engine_power = 3			 # acceleration and max speed
 			braking = -2 				 # braking speed and accel back
@@ -42,8 +46,8 @@ func chosen_car(num):
 			steer_velocity_factor = 1.3	 # how much angle is taken away from turning acc to speed
 			traction_vel_factor = 0.1	 # how much traction is lost acc to speed
 			traction_hand_factor = 0.35	 # how much traction is lost on spacebar
-			steer_hand_factor = 1	 # how much angle is increased on spacebar
-		2:
+			steer_hand_factor = 1	 	 # how much angle is increased on spacebar
+		1:
 			$Sprite2D.frame = 1
 			engine_power = 4
 			braking = -3
@@ -52,7 +56,7 @@ func chosen_car(num):
 			traction_vel_factor = 0.3
 			traction_hand_factor = 0.7
 			steer_hand_factor = 3
-		3:
+		2:
 			$Sprite2D.frame = 2
 			engine_power = 5
 			braking = -3
@@ -61,7 +65,7 @@ func chosen_car(num):
 			traction_vel_factor = 0.1
 			traction_hand_factor = 0.2
 			steer_hand_factor = 1
-		4:
+		3:
 			$Sprite2D.frame = 3
 			engine_power = 7
 			braking = -5
@@ -70,7 +74,7 @@ func chosen_car(num):
 			traction_vel_factor = 0.13
 			traction_hand_factor = 0.1
 			steer_hand_factor = 1
-		5:
+		4:
 			$Sprite2D.frame = 4
 			engine_power = 9
 			braking = -8
@@ -79,16 +83,16 @@ func chosen_car(num):
 			traction_vel_factor = 0
 			traction_hand_factor = 0.01
 			steer_hand_factor = 1.2
-		6:
+		5:
 			$Sprite2D.frame = 5
-			engine_power = 20
-			braking = -20
+			engine_power = 15
+			braking = -10
 			max_speed_reverse = 1.5
-			steer_velocity_factor = 2
+			steer_velocity_factor = 1.35
 			traction_vel_factor = 0
-			traction_hand_factor = 0.1
-			steer_hand_factor = 2
-		7:
+			traction_hand_factor = 0
+			steer_hand_factor = 0
+		6:
 			$Sprite2D.frame = 6
 			engine_power = 3
 			braking = -2
@@ -97,26 +101,6 @@ func chosen_car(num):
 			traction_vel_factor = 10
 			traction_hand_factor = 10
 			steer_hand_factor = 3
-
-#func _process(delta):
-	#var driftbroke = false
-	#if traction < 0.2 and turning and !collision:
-		#score += (velocity.length()*velocity.length())/2 + score*0.001
-	#elif !collision and (traction > 0.3 or !turning):
-		#for i in 10:
-			#await get_tree().create_timer(0.1).timeout
-			#if traction > 0.3 or !turning:
-				#driftbroke = true
-				#continue
-			#elif traction < 0.2 or turning:
-				#driftbroke = false
-				#break
-		#if score > bestdrift and driftbroke:
-			#bestdrift = score
-			#main.reload_text()
-			#score = 0
-	#elif collision:
-		#score = 0
 
 func _physics_process(delta):
 	$Smoke.emitting = true
@@ -132,52 +116,64 @@ func _physics_process(delta):
 	apply_friction()
 	calculate_steering(delta)
 	velocity += acceleration * delta
-	collision = move_and_collide(velocity)
 	if collision:
-		friction = -10
 		if velocity.length() > 0.5:
 			collision_sound()
-	else:
-		friction = base_friction
+			colliding = true
+			move_and_collide(-0.5*velocity)
+			acceleration = Vector2.ZERO
+			turn = 0
+			await get_tree().create_timer(0.15).timeout
+			turn = 0
+			acceleration = Vector2.ZERO
+			velocity = Vector2.ZERO
+			colliding = false
+	collision = move_and_collide(velocity)
 
 func apply_friction():
 	if velocity.length() < 0.025:
 		velocity = Vector2.ZERO
+	tile = check_tile()
+	if tile == 'Grass':
+		friction = -10
+	else:
+		friction = base_friction
 	var friction_force = velocity * friction
 	var drag_force = velocity * velocity.length() * drag
 	acceleration += drag_force + friction_force
 
 func get_input():
-	var turn = 0
-	if Input.is_action_pressed("Right") and Input.is_action_pressed("Left"):
+	if !colliding:
 		turn = 0
-		turning = false
-	if Input.is_action_pressed("Right"):
-		turn += 1
-		turning = true
-		if traction < 0.2:
-			$LeftWheelDrift.emitting = true
-			$RightWheelDrift.emitting = true
-	if Input.is_action_pressed("Left"):
-		turn -= 1
-		turning = true
-		if traction < 0.2:
-			$LeftWheelDrift.emitting = true
-			$RightWheelDrift.emitting = true
-	if Input.is_action_pressed("Throttle"):
-		acceleration = transform.x * engine_power
-	if Input.is_action_pressed("Brake"):
-		acceleration = transform.x * braking
-	if Input.is_action_pressed("Handbrake"):
-		traction = traction_base - velocity.length() * traction_hand_factor
-		traction = clamp(traction, 0.01,traction_base)
-		steering_angle = (steering_angle_base - velocity.length() * steer_velocity_factor) * steer_hand_factor
-		steering_angle = clamp(steering_angle , 0 , 20)
-		
-		if velocity.length() > 2 and turning:
-			$LeftWheelDrift.emitting = true
-			$RightWheelDrift.emitting = true
-	steer_direction = turn * deg_to_rad(steering_angle)
+		if Input.is_action_pressed("Right") and Input.is_action_pressed("Left"):
+			turn = 0
+			turning = false
+		if Input.is_action_pressed("Right"):
+			turn += 1
+			turning = true
+			if traction < 0.2:
+				$LeftWheelDrift.emitting = true
+				$RightWheelDrift.emitting = true
+		if Input.is_action_pressed("Left"):
+			turn -= 1
+			turning = true
+			if traction < 0.2:
+				$LeftWheelDrift.emitting = true
+				$RightWheelDrift.emitting = true
+		if Input.is_action_pressed("Throttle"):
+			acceleration = transform.x * engine_power
+		if Input.is_action_pressed("Brake"):
+			acceleration = transform.x * braking
+		if Input.is_action_pressed("Handbrake"):
+			traction = traction_base - velocity.length() * traction_hand_factor
+			traction = clamp(traction, 0.01,traction_base)
+			steering_angle = (steering_angle_base - velocity.length() * steer_velocity_factor) * steer_hand_factor
+			steering_angle = clamp(steering_angle , 0 , 20)
+			
+			if velocity.length() > 2 and turning:
+				$LeftWheelDrift.emitting = true
+				$RightWheelDrift.emitting = true
+		steer_direction = turn * deg_to_rad(steering_angle)
 
 func calculate_steering(delta):
 	var rear_wheel = position - transform.x * wheel_base/2.0
@@ -194,3 +190,13 @@ func calculate_steering(delta):
 
 func collision_sound():
 	$CollisionSFX.play()
+
+func check_tile():
+	var data = tilemap.get_cell_tile_data(0, check_coords())
+	if data != null:
+		var type = data.get_custom_data('0')
+		return type
+
+func check_coords():
+	var tile_coords = tilemap.local_to_map(tilemap.to_local(position))
+	return tile_coords

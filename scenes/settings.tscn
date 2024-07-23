@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://0bbo8qbn4n5a"]
+
+[ext_resource type="Script" path="res://scripts/settings.gd" id="1_c7ewo"]
+[ext_resource type="FontFile" uid="uid://cwo2tc2qtq41u" path="res://karmatic-arcade/ka1.ttf" id="1_vy5gq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfhbi"]
+bg_color = Color(0.980392, 0.580392, 0.584314, 1)
+
+[node name="settings" type="Node2D"]
+script = ExtResource("1_c7ewo")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1200.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gfhbi")
+
+[node name="reset" type="Button" parent="."]
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+offset_left = 136.0
+offset_top = 304.0
+offset_right = 1082.0
+offset_bottom = 404.0
+theme_override_fonts/font = ExtResource("1_vy5gq")
+theme_override_font_sizes/font_size = 81
+text = "reset progress"
+flat = true
+
+[node name="backbutton" type="Button" parent="."]
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+offset_left = 488.0
+offset_top = 624.0
+offset_right = 724.0
+offset_bottom = 705.0
+theme_override_fonts/font = ExtResource("1_vy5gq")
+theme_override_font_sizes/font_size = 65
+text = "back"
+flat = true
+
+[node name="yesimsure" type="Button" parent="."]
+visible = false
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+offset_left = 400.0
+offset_top = 424.0
+offset_right = 775.0
+offset_bottom = 505.0
+theme_override_fonts/font = ExtResource("1_vy5gq")
+theme_override_font_sizes/font_size = 65
+text = "confirm"
+flat = true
+
+[connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="backbutton" to="." method="_on_backbutton_pressed"]
+[connection signal="pressed" from="yesimsure" to="." method="_on_yesimsure_pressed"]

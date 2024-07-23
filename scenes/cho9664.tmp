@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c34syoq1xxtx3"]
+[gd_scene load_steps=17 format=3 uid="uid://c34syoq1xxtx3"]
 
 [ext_resource type="Texture2D" uid="uid://w5cw17px38cn" path="res://maps/1.png" id="1_gfn6h"]
 [ext_resource type="Script" path="res://scripts/choose_map.gd" id="1_iy4ug"]
@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://cjdsjoa0pyosm" path="res://art/sprites/car4.png" id="8_f54gi"]
 [ext_resource type="Texture2D" uid="uid://nelk7gqvto52" path="res://art/sprites/car5.png" id="9_otu8t"]
 [ext_resource type="Texture2D" uid="uid://bakyg4n67wdrb" path="res://art/sprites/car6.png" id="10_fdkcs"]
-[ext_resource type="Texture2D" uid="uid://b3jicq32v3g1v" path="res://maps/7.png" id="10_hnm84"]
 [ext_resource type="Texture2D" uid="uid://bqr6adxx54bb5" path="res://art/sprites/car7.png" id="11_tldix"]
 
 [node name="choose_map" type="Node2D"]
@@ -23,48 +22,30 @@ script = ExtResource("1_iy4ug")
 
 [node name="BackGround" type="ColorRect" parent="."]
 offset_right = 1200.0
-offset_bottom = 720.0
+offset_bottom = 712.0
 color = Color(0.980392, 0.580392, 0.584314, 1)
 
 [node name="Back" type="Button" parent="."]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -24.0
-offset_top = -16.0
-offset_right = 268.0
-offset_bottom = 84.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 284.0
+offset_bottom = 92.0
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 65
+theme_override_font_sizes/font_size = 70
 text = "Back"
 flat = true
 
 [node name="Go" type="Button" parent="."]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 624.0
-offset_top = 632.0
-offset_right = 1209.0
-offset_bottom = 719.0
+offset_left = 1048.0
+offset_top = 616.0
+offset_right = 1180.0
+offset_bottom = 703.0
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 65
-text = "Choose car"
-flat = true
-
-[node name="Next" type="Button" parent="."]
-offset_left = 984.0
-offset_top = 152.0
-offset_right = 1056.0
-offset_bottom = 224.0
-scale = Vector2(2.93, 2.93)
-icon = ExtResource("4_gknjx")
-flat = true
-
-[node name="Previous" type="Button" parent="."]
-offset_left = 216.0
-offset_top = 360.0
-offset_right = 288.0
-offset_bottom = 432.0
-rotation = 3.14159
-scale = Vector2(2.93, 2.93)
-icon = ExtResource("4_gknjx")
+theme_override_font_sizes/font_size = 70
+text = "go
+"
 flat = true
 
 [node name="Maps" type="CanvasLayer" parent="."]
@@ -104,14 +85,26 @@ position = Vector2(600, 248)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_uey1g")
 
-[node name="Map6" type="Sprite2D" parent="Maps"]
-visible = false
-position = Vector2(600, 248)
-scale = Vector2(0.355, 0.418658)
-texture = ExtResource("10_hnm84")
+[node name="Next" type="Button" parent="."]
+offset_left = 984.0
+offset_top = 152.0
+offset_right = 1056.0
+offset_bottom = 224.0
+scale = Vector2(2.93, 2.93)
+icon = ExtResource("4_gknjx")
+flat = true
+
+[node name="Previous" type="Button" parent="."]
+offset_left = 216.0
+offset_top = 360.0
+offset_right = 288.0
+offset_bottom = 432.0
+rotation = 3.14159
+scale = Vector2(2.93, 2.93)
+icon = ExtResource("4_gknjx")
+flat = true
 
 [node name="Time_Attack" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Sprite2D1" type="Sprite2D" parent="Time_Attack"]
 position = Vector2(104, 480)
@@ -126,35 +119,28 @@ offset_top = -16.0
 offset_right = 18.3333
 offset_bottom = 3.00004
 rotation = -1.5708
-scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "00"
-metadata/_edit_use_anchors_ = true
+theme_override_font_sizes/font_size = 16
 
 [node name="sec" type="Label" parent="Time_Attack/Sprite2D1"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -10.6669
-offset_top = -53.3332
-offset_right = 95.3331
-offset_bottom = 14.6668
+offset_left = -10.6668
+offset_top = -48.0
+offset_right = 18.3332
+offset_bottom = -29.0
 rotation = -1.5708
-scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "00"
+theme_override_font_sizes/font_size = 16
 
 [node name="msec" type="Label" parent="Time_Attack/Sprite2D1"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -10.6671
-offset_top = -90.6666
-offset_right = 148.333
-offset_bottom = -22.6666
+offset_left = -10.6669
+offset_top = -80.0
+offset_right = 32.3331
+offset_bottom = -61.0
 rotation = -1.5708
-scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "000"
+theme_override_font_sizes/font_size = 16
 
 [node name="Sprite2D2" type="Sprite2D" parent="Time_Attack"]
 position = Vector2(104, 544)
@@ -167,36 +153,30 @@ modulate = Color(0.160784, 0.0862745, 0.113725, 1)
 offset_left = -10.6667
 offset_top = -16.0
 offset_right = 18.3333
-offset_bottom = 3.00004
+offset_bottom = 2.99998
 rotation = -1.5708
-scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "00"
+theme_override_font_sizes/font_size = 16
 
 [node name="sec" type="Label" parent="Time_Attack/Sprite2D2"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -10.6669
-offset_top = -53.3332
-offset_right = 95.3331
-offset_bottom = 14.6668
+offset_left = -10.6668
+offset_top = -48.0
+offset_right = 18.3332
+offset_bottom = -29.0
 rotation = -1.5708
-scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "00"
+theme_override_font_sizes/font_size = 16
 
 [node name="msec" type="Label" parent="Time_Attack/Sprite2D2"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -10.6671
-offset_top = -90.6666
-offset_right = 148.333
-offset_bottom = -22.6666
+offset_left = -10.6669
+offset_top = -80.0
+offset_right = 32.3331
+offset_bottom = -61.0
 rotation = -1.5708
-scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "000"
+theme_override_font_sizes/font_size = 16
 
 [node name="Sprite2D3" type="Sprite2D" parent="Time_Attack"]
 position = Vector2(104, 608)
@@ -209,36 +189,30 @@ modulate = Color(0.160784, 0.0862745, 0.113725, 1)
 offset_left = -10.6667
 offset_top = -16.0
 offset_right = 18.3333
-offset_bottom = 3.00004
+offset_bottom = 2.99997
 rotation = -1.5708
-scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "00"
+theme_override_font_sizes/font_size = 16
 
 [node name="sec" type="Label" parent="Time_Attack/Sprite2D3"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
 offset_left = -10.6669
-offset_top = -53.3332
-offset_right = 95.3331
-offset_bottom = 14.6668
+offset_top = -48.0
+offset_right = 18.3331
+offset_bottom = -29.0
 rotation = -1.5708
-scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "00"
+theme_override_font_sizes/font_size = 16
 
 [node name="msec" type="Label" parent="Time_Attack/Sprite2D3"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -10.6671
-offset_top = -90.6666
-offset_right = 148.333
-offset_bottom = -22.6666
+offset_left = -10.667
+offset_top = -80.0
+offset_right = 32.3331
+offset_bottom = -61.0
 rotation = -1.5708
-scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "000"
+theme_override_font_sizes/font_size = 16
 
 [node name="Sprite2D4" type="Sprite2D" parent="Time_Attack"]
 position = Vector2(104, 672)
@@ -251,123 +225,105 @@ modulate = Color(0.160784, 0.0862745, 0.113725, 1)
 offset_left = -10.6667
 offset_top = -16.0
 offset_right = 18.3333
-offset_bottom = 3.00004
+offset_bottom = 2.99997
 rotation = -1.5708
-scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "00"
+theme_override_font_sizes/font_size = 16
 
 [node name="sec" type="Label" parent="Time_Attack/Sprite2D4"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -10.6669
-offset_top = -53.3332
-offset_right = 95.3331
-offset_bottom = 14.6668
+offset_left = -10.6668
+offset_top = -48.0
+offset_right = 18.3332
+offset_bottom = -29.0
 rotation = -1.5708
-scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "00"
+theme_override_font_sizes/font_size = 16
 
 [node name="msec" type="Label" parent="Time_Attack/Sprite2D4"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -10.6671
-offset_top = -90.6666
-offset_right = 148.333
-offset_bottom = -22.6666
+offset_left = -10.6669
+offset_top = -80.0
+offset_right = 32.3331
+offset_bottom = -61.0
 rotation = -1.5708
-scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "000"
+theme_override_font_sizes/font_size = 16
 
 [node name="Sprite2D5" type="Sprite2D" parent="Time_Attack"]
-position = Vector2(592.001, 480)
+position = Vector2(560, 480)
 rotation = 1.5708
 scale = Vector2(3, 3)
 texture = ExtResource("9_otu8t")
 
 [node name="mins" type="Label" parent="Time_Attack/Sprite2D5"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -10.6667
-offset_top = -16.0
-offset_right = 18.3333
-offset_bottom = 3.00004
+offset_left = -10.6668
+offset_top = -15.9999
+offset_right = 18.3332
+offset_bottom = 3.00009
 rotation = -1.5708
-scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "00"
+theme_override_font_sizes/font_size = 16
 
 [node name="sec" type="Label" parent="Time_Attack/Sprite2D5"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -10.6669
-offset_top = -53.3332
-offset_right = 95.3331
-offset_bottom = 14.6668
+offset_left = -10.667
+offset_top = -47.9999
+offset_right = 18.333
+offset_bottom = -28.9999
 rotation = -1.5708
-scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "00"
+theme_override_font_sizes/font_size = 16
 
 [node name="msec" type="Label" parent="Time_Attack/Sprite2D5"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -10.6671
-offset_top = -90.6666
-offset_right = 148.333
-offset_bottom = -22.6666
+offset_left = -10.667
+offset_top = -79.9999
+offset_right = 32.333
+offset_bottom = -60.9999
 rotation = -1.5708
-scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "000"
+theme_override_font_sizes/font_size = 16
 
 [node name="Sprite2D6" type="Sprite2D" parent="Time_Attack"]
-position = Vector2(592, 544)
+position = Vector2(560, 544)
 rotation = 1.5708
 scale = Vector2(3, 3)
 texture = ExtResource("10_fdkcs")
 
 [node name="mins" type="Label" parent="Time_Attack/Sprite2D6"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -10.6667
-offset_top = -16.0
-offset_right = 18.3333
-offset_bottom = 3.00004
+offset_left = -10.6668
+offset_top = -15.9999
+offset_right = 18.3332
+offset_bottom = 3.00008
 rotation = -1.5708
-scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "00"
+theme_override_font_sizes/font_size = 16
 
 [node name="sec" type="Label" parent="Time_Attack/Sprite2D6"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -10.6669
-offset_top = -53.3332
-offset_right = 95.3331
-offset_bottom = 14.6668
+offset_left = -10.667
+offset_top = -47.9999
+offset_right = 18.333
+offset_bottom = -28.9999
 rotation = -1.5708
-scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "00"
+theme_override_font_sizes/font_size = 16
 
 [node name="msec" type="Label" parent="Time_Attack/Sprite2D6"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -10.6671
-offset_top = -90.6666
-offset_right = 148.333
-offset_bottom = -22.6666
+offset_left = -10.667
+offset_top = -79.9999
+offset_right = 32.333
+offset_bottom = -60.9999
 rotation = -1.5708
-scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "000"
+theme_override_font_sizes/font_size = 16
 
 [node name="Sprite2D7" type="Sprite2D" parent="Time_Attack"]
-position = Vector2(592, 608)
+position = Vector2(560, 608)
 rotation = 1.5708
 scale = Vector2(3, 3)
 texture = ExtResource("11_tldix")
@@ -377,166 +333,30 @@ modulate = Color(0.160784, 0.0862745, 0.113725, 1)
 offset_left = -10.6667
 offset_top = -16.0
 offset_right = 18.3333
-offset_bottom = 3.00004
+offset_bottom = 2.99999
 rotation = -1.5708
-scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "00"
+theme_override_font_sizes/font_size = 16
 
 [node name="sec" type="Label" parent="Time_Attack/Sprite2D7"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
 offset_left = -10.6669
-offset_top = -53.3332
-offset_right = 95.3331
-offset_bottom = 14.6668
+offset_top = -48.0
+offset_right = 18.3331
+offset_bottom = -29.0
 rotation = -1.5708
-scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "00"
+theme_override_font_sizes/font_size = 16
 
 [node name="msec" type="Label" parent="Time_Attack/Sprite2D7"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -10.6671
-offset_top = -90.6666
-offset_right = 148.333
-offset_bottom = -22.6666
+offset_left = -10.6669
+offset_top = -80.0
+offset_right = 32.3331
+offset_bottom = -61.0
 rotation = -1.5708
-scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "000"
-
-[node name="Drift" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="Sprite2D1" type="Sprite2D" parent="Drift"]
-position = Vector2(104, 480)
-rotation = 1.5708
-scale = Vector2(3, 3)
-texture = ExtResource("5_l4t5f")
-
-[node name="score" type="Label" parent="Drift/Sprite2D1"]
-modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -10.6667
-offset_top = -16.0
-offset_right = 18.3333
-offset_bottom = 3.00004
-rotation = -1.5708
-scale = Vector2(0.3, 0.3)
-theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "1000000"
-metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D2" type="Sprite2D" parent="Drift"]
-position = Vector2(104, 544)
-rotation = 1.5708
-scale = Vector2(3, 3)
-texture = ExtResource("6_u66so")
-
-[node name="score" type="Label" parent="Drift/Sprite2D2"]
-modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -10.6667
-offset_top = -16.0
-offset_right = 18.3333
-offset_bottom = 3.00004
-rotation = -1.5708
-scale = Vector2(0.3, 0.3)
-theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "00"
-
-[node name="Sprite2D3" type="Sprite2D" parent="Drift"]
-position = Vector2(104, 608)
-rotation = 1.5708
-scale = Vector2(3, 3)
-texture = ExtResource("7_fsfed")
-
-[node name="score" type="Label" parent="Drift/Sprite2D3"]
-modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -10.6667
-offset_top = -16.0
-offset_right = 18.3333
-offset_bottom = 3.00004
-rotation = -1.5708
-scale = Vector2(0.3, 0.3)
-theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "00"
-
-[node name="Sprite2D4" type="Sprite2D" parent="Drift"]
-position = Vector2(104, 672)
-rotation = 1.5708
-scale = Vector2(3, 3)
-texture = ExtResource("8_f54gi")
-
-[node name="score" type="Label" parent="Drift/Sprite2D4"]
-modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -10.6667
-offset_top = -16.0
-offset_right = 18.3333
-offset_bottom = 3.00004
-rotation = -1.5708
-scale = Vector2(0.3, 0.3)
-theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "00"
-
-[node name="Sprite2D5" type="Sprite2D" parent="Drift"]
-position = Vector2(592.001, 480)
-rotation = 1.5708
-scale = Vector2(3, 3)
-texture = ExtResource("9_otu8t")
-
-[node name="score" type="Label" parent="Drift/Sprite2D5"]
-modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -10.6667
-offset_top = -16.0
-offset_right = 18.3333
-offset_bottom = 3.00004
-rotation = -1.5708
-scale = Vector2(0.3, 0.3)
-theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "00"
-
-[node name="Sprite2D6" type="Sprite2D" parent="Drift"]
-position = Vector2(592, 544)
-rotation = 1.5708
-scale = Vector2(3, 3)
-texture = ExtResource("10_fdkcs")
-
-[node name="score" type="Label" parent="Drift/Sprite2D6"]
-modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -10.6667
-offset_top = -16.0
-offset_right = 18.3333
-offset_bottom = 3.00004
-rotation = -1.5708
-scale = Vector2(0.3, 0.3)
-theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "00"
-
-[node name="Sprite2D7" type="Sprite2D" parent="Drift"]
-position = Vector2(592, 608)
-rotation = 1.5708
-scale = Vector2(3, 3)
-texture = ExtResource("11_tldix")
-
-[node name="score" type="Label" parent="Drift/Sprite2D7"]
-modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -10.6667
-offset_top = -16.0
-offset_right = 18.3333
-offset_bottom = 3.00004
-rotation = -1.5708
-scale = Vector2(0.3, 0.3)
-theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 60
-text = "00"
+theme_override_font_sizes/font_size = 16
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Go" to="." method="_on_go_pressed"]

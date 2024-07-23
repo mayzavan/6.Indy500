@@ -21,8 +21,9 @@ func _on_time_challenge_pressed():
 	get_tree().change_scene_to_file("res://scenes/choose_map.tscn")
 
 func _on_race_pressed():
-	Global.mode = 'race'
-	get_tree().change_scene_to_file("res://scenes/choose_map.tscn")
+	#Global.mode = 'race'
+	#get_tree().change_scene_to_file("res://scenes/choose_map.tscn")
+	pass
 
 func _on_main_menu_pressed():
 	get_tree().change_scene_to_file("res://scenes/main.tscn")

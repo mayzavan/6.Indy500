@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dxuay4xb28ufb"]
 
-[ext_resource type="Texture2D" uid="uid://l4nsjwljdr3g" path="res://sprites/tilemap.png" id="1_6nb0f"]
+[ext_resource type="Texture2D" uid="uid://l4nsjwljdr3g" path="res://art/sprites/tilemap.png" id="1_6nb0f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tj21k"]
 texture = ExtResource("1_6nb0f")
@@ -21,6 +21,10 @@ texture = ExtResource("1_6nb0f")
 3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:0/0/physics_layer_0/angular_velocity = 0.0
 3:0/0/custom_data_0 = "Mid"
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0/custom_data_0 = "Grass"
 
 [resource]
 physics_layer_0/collision_layer = 1

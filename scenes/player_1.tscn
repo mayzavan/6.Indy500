@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://boil5tveisyc7" path="res://art/sprites/cars.png" id="2_vkc1d"]
 [ext_resource type="AudioStream" uid="uid://dtjhwsx2hoauh" path="res://art/sound/Hit_Hurt11.wav" id="3_ftvam"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_spjtp"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ly7np"]
 radius = 7.0
 height = 26.0
 
@@ -12,14 +12,14 @@ height = 26.0
 gravity_scale = 0.0
 script = ExtResource("1_wjnb1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_spjtp")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
 texture = ExtResource("2_vkc1d")
 hframes = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ly7np")
 
 [node name="LeftWheelDrift" type="CPUParticles2D" parent="."]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)

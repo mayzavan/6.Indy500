@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://0lk5yn3nfbca"]
+[gd_scene load_steps=11 format=3 uid="uid://0lk5yn3nfbca"]
 
 [ext_resource type="Script" path="res://scripts/choose_car.gd" id="1_bnexm"]
 [ext_resource type="Texture2D" uid="uid://buq36mhn42psb" path="res://art/sprites/car1.png" id="1_topdo"]
@@ -11,36 +11,32 @@
 [ext_resource type="Texture2D" uid="uid://bqr6adxx54bb5" path="res://art/sprites/car7.png" id="7_c8pqn"]
 [ext_resource type="FontFile" uid="uid://cwo2tc2qtq41u" path="res://karmatic-arcade/ka1.ttf" id="9_nv3re"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_142mw"]
-bg_color = Color(0.160784, 0.0862745, 0.113725, 1)
-
 [node name="choose_car" type="Node2D"]
 script = ExtResource("1_bnexm")
 
 [node name="BackGround" type="ColorRect" parent="."]
 offset_right = 1200.0
-offset_bottom = 720.0
+offset_bottom = 712.0
 color = Color(0.980392, 0.580392, 0.584314, 1)
 
 [node name="Back" type="Button" parent="."]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 248.0
-offset_bottom = 79.0
+offset_left = 8.0
+offset_right = 264.0
+offset_bottom = 87.0
 theme_override_fonts/font = ExtResource("9_nv3re")
-theme_override_font_sizes/font_size = 65
+theme_override_font_sizes/font_size = 70
 text = "Back"
 flat = true
 
 [node name="Play" type="Button" parent="."]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 952.0
-offset_top = 632.0
-offset_right = 1208.0
-offset_bottom = 719.0
+offset_left = 936.0
+offset_top = 616.0
+offset_right = 1192.0
+offset_bottom = 703.0
 theme_override_fonts/font = ExtResource("9_nv3re")
-theme_override_font_sizes/font_size = 65
+theme_override_font_sizes/font_size = 70
 text = "Play"
 flat = true
 
@@ -105,106 +101,6 @@ rotation = 3.14159
 scale = Vector2(2.93, 2.93)
 icon = ExtResource("4_h1tqd")
 flat = true
-
-[node name="CarDescription" type="Node" parent="."]
-
-[node name="Speed" type="Label" parent="CarDescription"]
-modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 512.0
-offset_top = 528.0
-offset_right = 880.0
-offset_bottom = 547.0
-theme_override_fonts/font = ExtResource("9_nv3re")
-theme_override_font_sizes/font_size = 16
-text = "Power"
-vertical_alignment = 1
-
-[node name="Panel" type="Panel" parent="CarDescription/Speed"]
-layout_mode = 0
-offset_left = -16.0
-offset_top = 24.0
-offset_right = 384.0
-offset_bottom = 34.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_142mw")
-
-[node name="OverSteer" type="Label" parent="CarDescription"]
-modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 512.0
-offset_top = 568.0
-offset_right = 880.0
-offset_bottom = 587.0
-theme_override_fonts/font = ExtResource("9_nv3re")
-theme_override_font_sizes/font_size = 16
-text = "Oversteer
-"
-vertical_alignment = 1
-
-[node name="Panel" type="Panel" parent="CarDescription/OverSteer"]
-offset_left = -16.0
-offset_top = 24.0
-offset_right = 384.0
-offset_bottom = 34.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_142mw")
-
-[node name="Understeer" type="Label" parent="CarDescription"]
-modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 512.0
-offset_top = 608.0
-offset_right = 880.0
-offset_bottom = 627.0
-theme_override_fonts/font = ExtResource("9_nv3re")
-theme_override_font_sizes/font_size = 16
-text = "understeer
-"
-vertical_alignment = 1
-
-[node name="Panel" type="Panel" parent="CarDescription/Understeer"]
-offset_left = -16.0
-offset_top = 24.0
-offset_right = 384.0
-offset_bottom = 34.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_142mw")
-
-[node name="Difficulty" type="Label" parent="CarDescription"]
-modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 512.0
-offset_top = 648.0
-offset_right = 880.0
-offset_bottom = 667.0
-theme_override_fonts/font = ExtResource("9_nv3re")
-theme_override_font_sizes/font_size = 16
-text = "difficulty"
-vertical_alignment = 1
-
-[node name="Panel" type="Panel" parent="CarDescription/Difficulty"]
-offset_left = -16.0
-offset_top = 24.0
-offset_right = 384.0
-offset_bottom = 34.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_142mw")
-
-[node name="carname" type="Label" parent="CarDescription"]
-modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 24.0
-offset_top = 416.0
-offset_right = 1184.0
-offset_bottom = 490.0
-theme_override_fonts/font = ExtResource("9_nv3re")
-theme_override_font_sizes/font_size = 66
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="description" type="Label" parent="CarDescription"]
-modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 24.0
-offset_top = 504.0
-offset_right = 480.0
-offset_bottom = 696.0
-theme_override_fonts/font = ExtResource("9_nv3re")
-theme_override_font_sizes/font_size = 31
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

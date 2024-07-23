@@ -1,24 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://bppo7ln657qhh"]
+[gd_scene load_steps=4 format=3 uid="uid://bppo7ln657qhh"]
 
 [ext_resource type="FontFile" uid="uid://cwo2tc2qtq41u" path="res://karmatic-arcade/ka1.ttf" id="1_2a2m1"]
 [ext_resource type="Script" path="res://scripts/choose_mode.gd" id="1_vymrq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2xe6"]
+bg_color = Color(0.0941176, 0, 0, 1)
 
 [node name="choose_mode" type="Node2D"]
 script = ExtResource("1_vymrq")
 
 [node name="BackGround" type="ColorRect" parent="."]
 offset_right = 1200.0
-offset_bottom = 712.0
+offset_bottom = 720.0
 color = Color(0.980392, 0.580392, 0.584314, 1)
 
 [node name="Test_Track" type="CanvasLayer" parent="."]
 
 [node name="Test_Track" type="Button" parent="Test_Track"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 656.0
-offset_top = 368.0
-offset_right = 1140.0
-offset_bottom = 444.0
+offset_left = 56.0
+offset_top = 24.0
+offset_right = 540.0
+offset_bottom = 100.0
 theme_override_fonts/font = ExtResource("1_2a2m1")
 theme_override_font_sizes/font_size = 60
 text = "Test Track
@@ -29,10 +32,10 @@ flat = true
 
 [node name="Free_Ride" type="Button" parent="Free_Ride"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 40.0
-offset_top = 272.0
-offset_right = 459.0
-offset_bottom = 348.0
+offset_left = 64.0
+offset_top = 120.0
+offset_right = 483.0
+offset_bottom = 196.0
 theme_override_fonts/font = ExtResource("1_2a2m1")
 theme_override_font_sizes/font_size = 60
 text = "Free ride"
@@ -42,10 +45,10 @@ flat = true
 
 [node name="Time_attack" type="Button" parent="Time_attack"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 664.0
-offset_top = 176.0
-offset_right = 1171.0
-offset_bottom = 252.0
+offset_left = 56.0
+offset_top = 216.0
+offset_right = 563.0
+offset_bottom = 292.0
 theme_override_fonts/font = ExtResource("1_2a2m1")
 theme_override_font_sizes/font_size = 60
 text = "Time attack"
@@ -55,10 +58,10 @@ flat = true
 
 [node name="Drift" type="Button" parent="Drift"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 56.0
-offset_top = 448.0
-offset_right = 293.0
-offset_bottom = 524.0
+offset_left = 64.0
+offset_top = 312.0
+offset_right = 301.0
+offset_bottom = 388.0
 theme_override_fonts/font = ExtResource("1_2a2m1")
 theme_override_font_sizes/font_size = 60
 text = "Drift"
@@ -68,23 +71,41 @@ flat = true
 
 [node name="Time Challenge" type="Button" parent="Time_Challenge"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 16.0
-offset_top = 64.0
-offset_right = 682.0
-offset_bottom = 140.0
+offset_left = 64.0
+offset_top = 408.0
+offset_right = 730.0
+offset_bottom = 484.0
 theme_override_fonts/font = ExtResource("1_2a2m1")
 theme_override_font_sizes/font_size = 60
 text = "time challenge"
 flat = true
 
+[node name="Panel" type="Panel" parent="."]
+offset_left = 536.0
+offset_top = 504.0
+offset_right = 1152.0
+offset_bottom = 584.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g2xe6")
+
+[node name="Label" type="Label" parent="Panel"]
+modulate = Color(0.980392, 0.580392, 0.584314, 1)
+layout_mode = 0
+offset_left = 24.0
+offset_top = 8.0
+offset_right = 366.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("1_2a2m1")
+theme_override_font_sizes/font_size = 46
+text = "To be done"
+
 [node name="Race" type="CanvasLayer" parent="."]
 
 [node name="Race" type="Button" parent="Race"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 880.0
-offset_top = 40.0
-offset_right = 1100.0
-offset_bottom = 116.0
+offset_left = 912.0
+offset_top = 504.0
+offset_right = 1132.0
+offset_bottom = 580.0
 theme_override_fonts/font = ExtResource("1_2a2m1")
 theme_override_font_sizes/font_size = 60
 text = "race
@@ -95,10 +116,10 @@ flat = true
 
 [node name="Main_menu" type="Button" parent="Main_menu"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 344.0
-offset_top = 608.0
-offset_right = 763.0
-offset_bottom = 684.0
+offset_left = 392.0
+offset_top = 624.0
+offset_right = 811.0
+offset_bottom = 700.0
 theme_override_fonts/font = ExtResource("1_2a2m1")
 theme_override_font_sizes/font_size = 60
 text = "main menu
