@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmpujc0idqeno"]
+
+[ext_resource type="AudioStream" uid="uid://hqfugek0dyhq" path="res://art/sound/music/Theme.mp3" id="1_qq3qr"]
+[ext_resource type="Script" path="res://scripts/music.gd" id="2_pvt8c"]
+
+[node name="ThemeMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_qq3qr")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+script = ExtResource("2_pvt8c")

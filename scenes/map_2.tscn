@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://crmrm2n8l6t0o"]
+[gd_scene load_steps=6 format=3 uid="uid://crmrm2n8l6t0o"]
 
 [ext_resource type="TileSet" uid="uid://dxuay4xb28ufb" path="res://art/sprites/tilemap.tres" id="1_dx8ua"]
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_ohpq4"]
 [ext_resource type="PackedScene" uid="uid://cmsq7kmxju70o" path="res://scenes/player_1.tscn" id="2_2l7ah"]
 [ext_resource type="FontFile" uid="uid://cwo2tc2qtq41u" path="res://karmatic-arcade/ka1.ttf" id="4_cmo41"]
+
+[sub_resource type="Curve2D" id="Curve2D_td6ni"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 416, 120, -148.671, -1.25992, 148.671, 1.25992, 1008, 112, 0, 0, 0, 0, 1160, 376, -3.77976, -109.613, 3.77976, 109.613, 1176, 496, -12.5992, 112.133, 12.5992, -112.133, 1056, 480, 220.003, 16.6489, -220.003, -16.6489, 864, 208, 53.5143, -1.18921, -53.5143, 1.18921, 440, 208, 53.5143, -64.2172, -53.5143, 64.2172, 272, 344, -67.7848, 53.5143, 67.7848, -53.5143, 416, 368, -236.652, -64.2172, 236.652, 64.2172, 880, 368, 38.0546, -77.2985, -38.0546, 77.2985, 800, 504, 13.0813, -49.9467, -13.0813, 49.9467, 976, 584, 241.409, -5.94603, -241.409, 5.94603, 792, 696, 0, 0, 0, 0, 368, 688, 148.651, 7.13524, -148.651, -7.13524, 264, 688, -2.37841, 29.7302, 2.37841, -29.7302, 144, 552, -42.8115, 64.2172, 42.8115, -64.2172, 160, 248, -60.6496, 33.2978, 60.6496, -33.2978, 264, 152, 0, 0, 0, 0, 416, 120)
+}
+point_count = 19
 
 [node name="map_2" type="Node2D"]
 script = ExtResource("1_ohpq4")
@@ -121,3 +127,10 @@ offset_bottom = 79.0
 theme_override_fonts/font = ExtResource("4_cmo41")
 theme_override_font_sizes/font_size = 56
 text = "00"
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_td6ni")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(416, 120)
+rotation = -0.0135127

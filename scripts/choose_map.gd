@@ -11,50 +11,50 @@ func _ready():
 		load_drifts(Global.map0_drifts)
 	if Global.mode == 'time_chall':
 		map = 4
+	if Global.mode == 'vsAI':
+		map = 0
 		change_map()
 
-func _on_back_pressed():
-	get_tree().change_scene_to_file("res://scenes/choose_mode.tscn")
-
-func _on_go_pressed():
-	Global.chosen_map = map
-	get_tree().change_scene_to_file("res://scenes/choose_car.tscn")
-
-func _on_next_pressed():
-	if Global.mode == 'free':
-		if map == 6:
-			map = 0
-		else:
-			map += 1
-	elif Global.mode == 'drift' or Global.mode == 'time_attack':
-		if map == 3:
-			map = 0
-		else:
-			map += 1
-	elif Global.mode == 'time_chall':
-		if map == 6:
-			map = 4
-		else:
-			map += 1
-	change_map()
-
-func _on_previous_pressed():
-	if Global.mode == 'free':
-		if map == 0:
-			map = 6
-		else:
-			map -= 1
-	elif Global.mode == 'drift' or Global.mode == 'time_attack':
-		if map == 0:
-			map = 3
-		else:
-			map -= 1
-	elif Global.mode == 'time_chall':
-		if map == 4:
-			map = 6
-		else:
-			map -= 1
-	change_map()
+func _input(event):
+	if Input.is_action_just_pressed("Right"):
+		if Global.mode == 'free':
+			if map == 6:
+				map = 0
+			else:
+				map += 1
+		elif Global.mode == 'drift' or Global.mode == 'time_attack' or Global.mode == 'vsAI':
+			if map == 3:
+				map = 0
+			else:
+				map += 1
+		elif Global.mode == 'time_chall':
+			if map == 6:
+				map = 4
+			else:
+				map += 1
+		change_map()
+	if Input.is_action_just_pressed("Left"):
+		if Global.mode == 'free':
+			if map == 0:
+				map = 6
+			else:
+				map -= 1
+		elif Global.mode == 'drift' or Global.mode == 'time_attack' or Global.mode == 'vsAI':
+			if map == 0:
+				map = 3
+			else:
+				map -= 1
+		elif Global.mode == 'time_chall':
+			if map == 4:
+				map = 6
+			else:
+				map -= 1
+		change_map()
+	if Input.is_action_just_pressed("Enter") or Input.is_action_just_pressed("Handbrake"):
+		Global.chosen_map = map
+		get_tree().change_scene_to_file("res://scenes/choose_car.tscn")
+	if Input.is_action_just_pressed("Esc"):
+		get_tree().change_scene_to_file("res://scenes/choose_mode.tscn")
 
 func change_map():
 	$Maps/Map0.hide()
@@ -67,29 +67,40 @@ func change_map():
 	match map:
 		0:
 			$Maps/Map0.show()
-			load_times(Global.map0_times)
-			load_drifts(Global.map0_drifts)
+			if Global.mode == 'time_attack' or Global.mode == 'time_chall':
+				load_times(Global.map0_times)
+			if Global.mode == 'drift':
+				load_drifts(Global.map0_drifts)
 		1:
 			$Maps/Map1.show()
-			load_times(Global.map1_times)
-			load_drifts(Global.map1_drifts)
+			if Global.mode == 'time_attack' or Global.mode == 'time_chall':
+				load_times(Global.map1_times)
+			if Global.mode == 'drift':
+				load_drifts(Global.map1_drifts)
 		2:
 			$Maps/Map2.show()
-			load_times(Global.map2_times)
-			load_drifts(Global.map2_drifts)
+			if Global.mode == 'time_attack' or Global.mode == 'time_chall':
+				load_times(Global.map2_times)
+			if Global.mode == 'drift':
+				load_drifts(Global.map2_drifts)
 		3:
 			$Maps/Map3.show()
-			load_times(Global.map3_times)
-			load_drifts(Global.map3_drifts)
+			if Global.mode == 'time_attack' or Global.mode == 'time_chall':
+				load_times(Global.map3_times)
+			if Global.mode == 'drift':
+				load_drifts(Global.map3_drifts)
 		4:
 			$Maps/Map4.show()
-			load_times(Global.map4_times)
+			if Global.mode == 'time_attack' or Global.mode == 'time_chall':
+				load_times(Global.map4_times)
 		5:
 			$Maps/Map5.show()
-			load_times(Global.map5_times)
+			if Global.mode == 'time_attack' or Global.mode == 'time_chall':
+				load_times(Global.map5_times)
 		6:
 			$Maps/Map6.show()
-			load_times(Global.map6_times)
+			if Global.mode == 'time_attack' or Global.mode == 'time_chall':
+				load_times(Global.map6_times)
 
 func load_times(number):
 	var time:Array = number

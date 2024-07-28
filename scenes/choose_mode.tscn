@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bppo7ln657qhh"]
+[gd_scene load_steps=3 format=3 uid="uid://bppo7ln657qhh"]
 
 [ext_resource type="FontFile" uid="uid://cwo2tc2qtq41u" path="res://karmatic-arcade/ka1.ttf" id="1_2a2m1"]
 [ext_resource type="Script" path="res://scripts/choose_mode.gd" id="1_vymrq"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2xe6"]
-bg_color = Color(0.0941176, 0, 0, 1)
 
 [node name="choose_mode" type="Node2D"]
 script = ExtResource("1_vymrq")
@@ -16,120 +13,282 @@ color = Color(0.980392, 0.580392, 0.584314, 1)
 
 [node name="Test_Track" type="CanvasLayer" parent="."]
 
-[node name="Test_Track" type="Button" parent="Test_Track"]
+[node name="Test_Track" type="Label" parent="Test_Track"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
 offset_left = 56.0
 offset_top = 24.0
 offset_right = 540.0
 offset_bottom = 100.0
 theme_override_fonts/font = ExtResource("1_2a2m1")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 80
 text = "Test Track
 "
-flat = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lines" type="Node2D" parent="Test_Track/Test_Track"]
+position = Vector2(85, 0)
+
+[node name="Line" type="ColorRect" parent="Test_Track/Test_Track/Lines"]
+offset_left = -109.0
+offset_top = 100.0
+offset_right = 579.0
+offset_bottom = 116.0
+
+[node name="Line2" type="ColorRect" parent="Test_Track/Test_Track/Lines"]
+offset_left = -109.0
+offset_top = -16.0
+offset_right = 579.0
+
+[node name="Line4" type="ColorRect" parent="Test_Track/Test_Track/Lines"]
+offset_left = 579.0
+offset_right = 681.0
+offset_bottom = 16.0
+rotation = 1.5708
+
+[node name="Line5" type="ColorRect" parent="Test_Track/Test_Track/Lines"]
+offset_left = -93.0
+offset_right = 9.0
+offset_bottom = 16.0
+rotation = 1.5708
 
 [node name="Free_Ride" type="CanvasLayer" parent="."]
 
-[node name="Free_Ride" type="Button" parent="Free_Ride"]
+[node name="Free_Ride" type="Label" parent="Free_Ride"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 64.0
-offset_top = 120.0
-offset_right = 483.0
-offset_bottom = 196.0
+offset_top = 160.0
+offset_right = 419.0
+offset_bottom = 236.0
 theme_override_fonts/font = ExtResource("1_2a2m1")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 45
 text = "Free ride"
-flat = true
+horizontal_alignment = 1
 
-[node name="Time_attack" type="CanvasLayer" parent="."]
+[node name="Lines" type="Node2D" parent="Free_Ride/Free_Ride"]
+position = Vector2(85, 0)
 
-[node name="Time_attack" type="Button" parent="Time_attack"]
-modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 56.0
-offset_top = 216.0
-offset_right = 563.0
-offset_bottom = 292.0
-theme_override_fonts/font = ExtResource("1_2a2m1")
-theme_override_font_sizes/font_size = 60
-text = "Time attack"
-flat = true
+[node name="Line" type="ColorRect" parent="Free_Ride/Free_Ride/Lines"]
+offset_left = -53.0
+offset_top = 56.0
+offset_right = 307.0
+offset_bottom = 72.0
 
-[node name="Drift" type="CanvasLayer" parent="."]
+[node name="Line2" type="ColorRect" parent="Free_Ride/Free_Ride/Lines"]
+offset_left = -53.0
+offset_top = -16.0
+offset_right = 307.0
 
-[node name="Drift" type="Button" parent="Drift"]
-modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 64.0
-offset_top = 312.0
-offset_right = 301.0
-offset_bottom = 388.0
-theme_override_fonts/font = ExtResource("1_2a2m1")
-theme_override_font_sizes/font_size = 60
-text = "Drift"
-flat = true
+[node name="Line4" type="ColorRect" parent="Free_Ride/Free_Ride/Lines"]
+offset_left = 307.0
+offset_right = 374.0
+offset_bottom = 16.0
+rotation = 1.5708
+
+[node name="Line5" type="ColorRect" parent="Free_Ride/Free_Ride/Lines"]
+offset_left = -37.0
+offset_right = 35.0
+offset_bottom = 16.0
+rotation = 1.5708
 
 [node name="Time_Challenge" type="CanvasLayer" parent="."]
 
-[node name="Time Challenge" type="Button" parent="Time_Challenge"]
+[node name="Time Challenge" type="Label" parent="Time_Challenge"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 64.0
-offset_top = 408.0
-offset_right = 730.0
-offset_bottom = 484.0
+offset_left = -32.0
+offset_top = 256.0
+offset_right = 634.0
+offset_bottom = 332.0
 theme_override_fonts/font = ExtResource("1_2a2m1")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 45
 text = "time challenge"
-flat = true
+horizontal_alignment = 1
 
-[node name="Panel" type="Panel" parent="."]
-offset_left = 536.0
-offset_top = 504.0
-offset_right = 1152.0
-offset_bottom = 584.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_g2xe6")
+[node name="Lines" type="Node2D" parent="Time_Challenge/Time Challenge"]
+position = Vector2(85, 0)
 
-[node name="Label" type="Label" parent="Panel"]
-modulate = Color(0.980392, 0.580392, 0.584314, 1)
-layout_mode = 0
-offset_left = 24.0
-offset_top = 8.0
-offset_right = 366.0
-offset_bottom = 88.0
+[node name="Line" type="ColorRect" parent="Time_Challenge/Time Challenge/Lines"]
+offset_left = -21.0
+offset_top = 56.0
+offset_right = 523.0
+offset_bottom = 72.0
+
+[node name="Line2" type="ColorRect" parent="Time_Challenge/Time Challenge/Lines"]
+offset_left = -21.0
+offset_top = -16.0
+offset_right = 523.0
+
+[node name="Line4" type="ColorRect" parent="Time_Challenge/Time Challenge/Lines"]
+offset_left = 523.0
+offset_top = -8.0
+offset_right = 602.0
+offset_bottom = 8.0
+rotation = 1.5708
+
+[node name="Line5" type="ColorRect" parent="Time_Challenge/Time Challenge/Lines"]
+offset_left = -5.0
+offset_top = -8.0
+offset_right = 75.0
+offset_bottom = 8.0
+rotation = 1.5708
+
+[node name="Time_attack" type="CanvasLayer" parent="."]
+
+[node name="Time_attack" type="Label" parent="Time_attack"]
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+offset_left = -16.0
+offset_top = 352.0
+offset_right = 491.0
+offset_bottom = 428.0
 theme_override_fonts/font = ExtResource("1_2a2m1")
-theme_override_font_sizes/font_size = 46
-text = "To be done"
+theme_override_font_sizes/font_size = 45
+text = "Time attack"
+horizontal_alignment = 1
+
+[node name="Lines" type="Node2D" parent="Time_attack/Time_attack"]
+position = Vector2(85, 0)
+
+[node name="Line" type="ColorRect" parent="Time_attack/Time_attack/Lines"]
+offset_left = -37.0
+offset_top = 56.0
+offset_right = 379.0
+offset_bottom = 72.0
+
+[node name="Line2" type="ColorRect" parent="Time_attack/Time_attack/Lines"]
+offset_left = -37.0
+offset_top = -16.0
+offset_right = 379.0
+
+[node name="Line4" type="ColorRect" parent="Time_attack/Time_attack/Lines"]
+offset_left = 379.0
+offset_top = -8.0
+offset_right = 456.0
+offset_bottom = 8.0
+rotation = 1.5708
+
+[node name="Line5" type="ColorRect" parent="Time_attack/Time_attack/Lines"]
+offset_left = -21.0
+offset_top = -16.0
+offset_right = 60.0
+rotation = 1.5708
+
+[node name="Drift" type="CanvasLayer" parent="."]
+
+[node name="Drift" type="Label" parent="Drift"]
+modulate = Color(0.160784, 0.0862745, 0.113725, 1)
+offset_left = 24.0
+offset_top = 448.0
+offset_right = 261.0
+offset_bottom = 524.0
+theme_override_fonts/font = ExtResource("1_2a2m1")
+theme_override_font_sizes/font_size = 45
+text = "Drift"
+horizontal_alignment = 1
+
+[node name="Lines" type="Node2D" parent="Drift/Drift"]
+position = Vector2(85, 0)
+
+[node name="Line" type="ColorRect" parent="Drift/Drift/Lines"]
+offset_left = -77.0
+offset_top = 56.0
+offset_right = 147.0
+offset_bottom = 72.0
+
+[node name="Line2" type="ColorRect" parent="Drift/Drift/Lines"]
+offset_left = -77.0
+offset_top = -16.0
+offset_right = 147.0
+
+[node name="Line4" type="ColorRect" parent="Drift/Drift/Lines"]
+offset_left = 147.0
+offset_top = -8.0
+offset_right = 224.0
+offset_bottom = 8.0
+rotation = 1.5708
+
+[node name="Line5" type="ColorRect" parent="Drift/Drift/Lines"]
+offset_left = -61.0
+offset_top = -16.0
+offset_right = 20.0
+rotation = 1.5708
 
 [node name="Race" type="CanvasLayer" parent="."]
 
-[node name="Race" type="Button" parent="Race"]
+[node name="Race" type="Label" parent="Race"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 912.0
-offset_top = 504.0
-offset_right = 1132.0
-offset_bottom = 580.0
+offset_left = 16.0
+offset_top = 544.0
+offset_right = 236.0
+offset_bottom = 620.0
 theme_override_fonts/font = ExtResource("1_2a2m1")
-theme_override_font_sizes/font_size = 60
-text = "race
+theme_override_font_sizes/font_size = 45
+text = " VS AI
 "
-flat = true
+horizontal_alignment = 1
+
+[node name="Lines" type="Node2D" parent="Race/Race"]
+position = Vector2(85, 0)
+
+[node name="Line" type="ColorRect" parent="Race/Race/Lines"]
+offset_left = -69.0
+offset_top = 56.0
+offset_right = 131.0
+offset_bottom = 72.0
+
+[node name="Line2" type="ColorRect" parent="Race/Race/Lines"]
+offset_left = -69.0
+offset_top = -16.0
+offset_right = 131.0
+
+[node name="Line4" type="ColorRect" parent="Race/Race/Lines"]
+offset_left = 131.0
+offset_top = -8.0
+offset_right = 208.0
+offset_bottom = 8.0
+rotation = 1.5708
+
+[node name="Line5" type="ColorRect" parent="Race/Race/Lines"]
+offset_left = -53.0
+offset_top = -16.0
+offset_right = 28.0
+rotation = 1.5708
 
 [node name="Main_menu" type="CanvasLayer" parent="."]
 
-[node name="Main_menu" type="Button" parent="Main_menu"]
+[node name="Main_menu" type="Label" parent="Main_menu"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 392.0
-offset_top = 624.0
-offset_right = 811.0
-offset_bottom = 700.0
+offset_left = 400.0
+offset_top = 632.0
+offset_right = 819.0
+offset_bottom = 708.0
 theme_override_fonts/font = ExtResource("1_2a2m1")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 45
 text = "main menu
 "
-flat = true
+horizontal_alignment = 1
 
-[connection signal="pressed" from="Test_Track/Test_Track" to="." method="_on_test_track_pressed"]
-[connection signal="pressed" from="Free_Ride/Free_Ride" to="." method="_on_free_ride_pressed"]
-[connection signal="pressed" from="Time_attack/Time_attack" to="." method="_on_time_attack_pressed"]
-[connection signal="pressed" from="Drift/Drift" to="." method="_on_drift_pressed"]
-[connection signal="pressed" from="Time_Challenge/Time Challenge" to="." method="_on_time_challenge_pressed"]
-[connection signal="pressed" from="Race/Race" to="." method="_on_race_pressed"]
-[connection signal="pressed" from="Main_menu/Main_menu" to="." method="_on_main_menu_pressed"]
+[node name="Lines" type="Node2D" parent="Main_menu/Main_menu"]
+position = Vector2(85, 0)
+
+[node name="Line" type="ColorRect" parent="Main_menu/Main_menu/Lines"]
+offset_left = -61.0
+offset_top = 56.0
+offset_right = 315.0
+offset_bottom = 72.0
+
+[node name="Line2" type="ColorRect" parent="Main_menu/Main_menu/Lines"]
+offset_left = -61.0
+offset_top = -16.0
+offset_right = 315.0
+
+[node name="Line4" type="ColorRect" parent="Main_menu/Main_menu/Lines"]
+offset_left = 315.0
+offset_top = -8.0
+offset_right = 392.0
+offset_bottom = 8.0
+rotation = 1.5708
+
+[node name="Line5" type="ColorRect" parent="Main_menu/Main_menu/Lines"]
+offset_left = -45.0
+offset_top = -16.0
+offset_right = 36.0
+rotation = 1.5708

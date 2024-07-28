@@ -140,6 +140,7 @@ text = "Oversteer
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="CarDescription/OverSteer"]
+layout_mode = 0
 offset_left = -16.0
 offset_top = 24.0
 offset_right = 384.0
@@ -159,6 +160,7 @@ text = "understeer
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="CarDescription/Understeer"]
+layout_mode = 0
 offset_left = -16.0
 offset_top = 24.0
 offset_right = 384.0
@@ -177,6 +179,7 @@ text = "difficulty"
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="CarDescription/Difficulty"]
+layout_mode = 0
 offset_left = -16.0
 offset_top = 24.0
 offset_right = 384.0

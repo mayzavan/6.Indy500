@@ -6,40 +6,39 @@ var car = 0
 func _ready():
 	change_car()
 
-func _on_next_pressed():
-	if car == 6:
-		car = 0
-	else:
-		car += 1
+func _input(event):
+	if Input.is_action_just_pressed("Right"):
+		if car == 6:
+			car = 0
+		else:
+			car += 1
 	change_car()
-
-func _on_previous_pressed():
-	if car == 0:
-		car = 6
-	else:
-		car -= 1
-	change_car()
-
-func _on_back_pressed():
-	get_tree().change_scene_to_file("res://scenes/choose_map.tscn")
-
-func _on_play_pressed():
-	Global.chosen_car = car
-	match Global.chosen_map:
-		0:
-			get_tree().change_scene_to_file("res://scenes/map_1.tscn")
-		1:
-			get_tree().change_scene_to_file("res://scenes/map_2.tscn")
-		2:
-			get_tree().change_scene_to_file("res://scenes/map_3.tscn")
-		3:
-			get_tree().change_scene_to_file("res://scenes/map_4.tscn")
-		4:
-			get_tree().change_scene_to_file("res://scenes/challenge_1.tscn")
-		5:
-			get_tree().change_scene_to_file("res://scenes/challenge_2.tscn")
-		6:
-			get_tree().change_scene_to_file("res://scenes/challenge_3.tscn")
+	if Input.is_action_just_pressed("Left"):
+		if car == 0:
+			car = 6
+		else:
+			car -= 1
+		change_car()
+	if Input.is_action_just_pressed("Enter") or Input.is_action_just_pressed("Handbrake"):
+		Global.chosen_car = car
+		ThemeMusic.stopped = true
+		match Global.chosen_map:
+			0:
+				get_tree().change_scene_to_file("res://scenes/map_1.tscn")
+			1:
+				get_tree().change_scene_to_file("res://scenes/map_2.tscn")
+			2:
+				get_tree().change_scene_to_file("res://scenes/map_3.tscn")
+			3:
+				get_tree().change_scene_to_file("res://scenes/map_4.tscn")
+			4:
+				get_tree().change_scene_to_file("res://scenes/challenge_1.tscn")
+			5:
+				get_tree().change_scene_to_file("res://scenes/challenge_2.tscn")
+			6:
+				get_tree().change_scene_to_file("res://scenes/challenge_3.tscn")
+	if Input.is_action_just_pressed("Esc"):
+		get_tree().change_scene_to_file("res://scenes/choose_map.tscn")
 
 func change_car():
 	$Cars/Car1.hide()

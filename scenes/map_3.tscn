@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://ck6gp4rspetv6"]
+[gd_scene load_steps=6 format=3 uid="uid://ck6gp4rspetv6"]
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_713p2"]
 [ext_resource type="TileSet" uid="uid://dxuay4xb28ufb" path="res://art/sprites/tilemap.tres" id="1_h0rjk"]
 [ext_resource type="PackedScene" uid="uid://cmsq7kmxju70o" path="res://scenes/player_1.tscn" id="2_1x7la"]
 [ext_resource type="FontFile" uid="uid://cwo2tc2qtq41u" path="res://karmatic-arcade/ka1.ttf" id="4_xv1ga"]
+
+[sub_resource type="Curve2D" id="Curve2D_8785w"]
+_data = {
+"points": PackedVector2Array(-309.799, 1.12246, 309.799, -1.12246, 816, 104, 117.858, -196.431, -117.858, 196.431, 1168, 480, 318.779, 12.3471, -318.779, -12.3471, 296, 696, 2.24492, 162.757, -2.24492, -162.757, 32, 304, 0, 0, 0, 0, 816, 104)
+}
+point_count = 5
 
 [node name="map_3" type="Node2D"]
 script = ExtResource("1_713p2")
@@ -121,3 +127,12 @@ offset_bottom = 79.0
 theme_override_fonts/font = ExtResource("4_xv1ga")
 theme_override_font_sizes/font_size = 56
 text = "00"
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(3.15905e-06, -2.28882e-05)
+scale = Vector2(1, 1)
+curve = SubResource("Curve2D_8785w")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(816, 104)
+rotation = -0.00362316

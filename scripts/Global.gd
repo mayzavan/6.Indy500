@@ -1,6 +1,9 @@
 extends Node
 
 var location = "user://save_data.dat"
+var playedloc = "user://played.dat"
+
+var played : int
 
 var chosen_car = 0
 var chosen_map = 0
@@ -20,6 +23,11 @@ var map1_drifts: Array
 var map2_drifts: Array
 var map3_drifts: Array
 
+func _ready():
+	AudioServer.set_bus_volume_db(0, linear_to_db(0.5))
+	AudioServer.set_bus_volume_db(1, linear_to_db(0.5))
+	AudioServer.set_bus_volume_db(2, linear_to_db(0.5))
+
 func savefile():
 	highscores = [
 		map0_times,
@@ -36,16 +44,26 @@ func savefile():
 		
 	var file = FileAccess.open(location, FileAccess.WRITE)
 	file.store_var(highscores)
+	var file2 = FileAccess.open(playedloc, FileAccess.WRITE)
+	file2.store_var(played)
 	print("game saved")
 
 func loadfile():
+	if FileAccess.file_exists(playedloc):
+		print("played")
+		var file2 = FileAccess.open(playedloc, FileAccess.READ)
+		played = file2.get_var()
+	else:
+		print("not played")
+		played = 0
 	if FileAccess.file_exists(location):
 		print("game loaded")
 		var file = FileAccess.open(location, FileAccess.READ)
 		highscores = file.get_var()
 	else:
 		print("file not found")
-		highscores = [[0,0,0,0,0,0,0],
+		highscores = [
+		[0,0,0,0,0,0,0],
 		[0,0,0,0,0,0,0],
 		[0,0,0,0,0,0,0],
 		[0,0,0,0,0,0,0],

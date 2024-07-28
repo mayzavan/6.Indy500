@@ -117,7 +117,10 @@ func _physics_process(delta):
 	calculate_steering(delta)
 	velocity += acceleration * delta
 	if collision:
-		if velocity.length() > 0.5:
+		var collider = collision.get_collider()
+		if collider is ai:
+			pass
+		if velocity.length() > 0.5 and collider is TileMap:
 			collision_sound()
 			colliding = true
 			move_and_collide(-0.5*velocity)

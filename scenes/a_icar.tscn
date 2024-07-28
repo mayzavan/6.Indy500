@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqe453rrm0c4j"]
+
+[ext_resource type="Script" path="res://scripts/a_icar.gd" id="1_0qx4s"]
+[ext_resource type="Texture2D" uid="uid://pujyx4btb40f" path="res://art/sprites/car0.png" id="2_7w75i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sv51a"]
+radius = 7.0
+height = 25.0
+
+[node name="AIcar" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_0qx4s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_7w75i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_sv51a")

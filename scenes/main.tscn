@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://mlatia6ff2ci"]
+[gd_scene load_steps=11 format=3 uid="uid://mlatia6ff2ci"]
 
 [ext_resource type="Texture2D" uid="uid://buq36mhn42psb" path="res://art/sprites/car1.png" id="1_h0knd"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_qlwb2"]
@@ -10,9 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://bakyg4n67wdrb" path="res://art/sprites/car6.png" id="6_ypsvn"]
 [ext_resource type="Texture2D" uid="uid://bqr6adxx54bb5" path="res://art/sprites/car7.png" id="7_68x67"]
 [ext_resource type="Texture2D" uid="uid://pujyx4btb40f" path="res://art/sprites/car0.png" id="8_d0lau"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qpn85"]
-bg_color = Color(0.0627451, 0, 0, 1)
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_qlwb2")
@@ -101,102 +98,160 @@ texture = ExtResource("8_d0lau")
 
 [node name="Buttons" type="CanvasLayer" parent="."]
 
-[node name="Play" type="Button" parent="Buttons"]
+[node name="Play" type="Label" parent="Buttons"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 632.0
-offset_top = 208.0
-offset_right = 1042.0
-offset_bottom = 306.0
+offset_left = 550.0
+offset_top = 216.0
+offset_right = 1150.0
+offset_bottom = 316.0
 theme_override_fonts/font = ExtResource("1_wrwbc")
 theme_override_font_sizes/font_size = 80
 text = "Play"
-flat = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Line" type="ColorRect" parent="Buttons/Play"]
-layout_mode = 0
-offset_top = 106.0
-offset_right = 416.0
-offset_bottom = 122.0
-color = Color(0.160784, 0.0862745, 0.113725, 1)
+[node name="Lines" type="Node2D" parent="Buttons/Play"]
+position = Vector2(85, 0)
 
-[node name="Settings" type="Button" parent="Buttons"]
+[node name="Line" type="ColorRect" parent="Buttons/Play/Lines"]
+offset_left = -64.0
+offset_top = 100.0
+offset_right = 504.0
+offset_bottom = 116.0
+
+[node name="Line2" type="ColorRect" parent="Buttons/Play/Lines"]
+offset_left = -64.0
+offset_top = -8.0
+offset_right = 504.0
+offset_bottom = 8.0
+
+[node name="Line4" type="ColorRect" parent="Buttons/Play/Lines"]
+offset_left = 504.0
+offset_right = 606.0
+offset_bottom = 16.0
+rotation = 1.5708
+
+[node name="Line5" type="ColorRect" parent="Buttons/Play/Lines"]
+offset_left = -48.0
+offset_right = 54.0
+offset_bottom = 16.0
+rotation = 1.5708
+
+[node name="Settings" type="Label" parent="Buttons"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 592.0
-offset_top = 330.0
-offset_right = 1107.0
-offset_bottom = 428.0
+offset_left = 550.0
+offset_top = 344.0
+offset_right = 1150.0
+offset_bottom = 444.0
 theme_override_fonts/font = ExtResource("1_wrwbc")
 theme_override_font_sizes/font_size = 80
 text = "Settings"
-flat = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Line" type="ColorRect" parent="Buttons/Settings"]
-layout_mode = 0
-offset_top = 104.0
-offset_right = 528.0
-offset_bottom = 120.0
-color = Color(0.160784, 0.0862745, 0.113725, 1)
+[node name="Lines" type="Node2D" parent="Buttons/Settings"]
+position = Vector2(85, 0)
 
-[node name="Credits" type="Button" parent="Buttons"]
+[node name="Line" type="ColorRect" parent="Buttons/Settings/Lines"]
+offset_left = -64.0
+offset_top = 100.0
+offset_right = 504.0
+offset_bottom = 116.0
+
+[node name="Line2" type="ColorRect" parent="Buttons/Settings/Lines"]
+offset_left = -64.0
+offset_top = -8.0
+offset_right = 504.0
+offset_bottom = 8.0
+
+[node name="Line4" type="ColorRect" parent="Buttons/Settings/Lines"]
+offset_left = 504.0
+offset_right = 606.0
+offset_bottom = 16.0
+rotation = 1.5708
+
+[node name="Line5" type="ColorRect" parent="Buttons/Settings/Lines"]
+offset_left = -48.0
+offset_right = 54.0
+offset_bottom = 16.0
+rotation = 1.5708
+
+[node name="Credits" type="Label" parent="Buttons"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 592.0
-offset_top = 450.0
-offset_right = 1107.0
-offset_bottom = 548.0
+offset_left = 550.0
+offset_top = 472.0
+offset_right = 1150.0
+offset_bottom = 572.0
 theme_override_fonts/font = ExtResource("1_wrwbc")
 theme_override_font_sizes/font_size = 80
 text = "Credits
 "
-flat = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Line" type="ColorRect" parent="Buttons/Credits"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 104.0
-offset_right = 512.0
-offset_bottom = 120.0
-color = Color(0.160784, 0.0862745, 0.113725, 1)
+[node name="Lines" type="Node2D" parent="Buttons/Credits"]
+position = Vector2(85, 0)
 
-[node name="Quit" type="Button" parent="Buttons"]
+[node name="Line" type="ColorRect" parent="Buttons/Credits/Lines"]
+offset_left = -64.0
+offset_top = 100.0
+offset_right = 504.0
+offset_bottom = 116.0
+
+[node name="Line2" type="ColorRect" parent="Buttons/Credits/Lines"]
+offset_left = -64.0
+offset_top = -8.0
+offset_right = 504.0
+offset_bottom = 8.0
+
+[node name="Line4" type="ColorRect" parent="Buttons/Credits/Lines"]
+offset_left = 504.0
+offset_right = 606.0
+offset_bottom = 16.0
+rotation = 1.5708
+
+[node name="Line5" type="ColorRect" parent="Buttons/Credits/Lines"]
+offset_left = -48.0
+offset_right = 54.0
+offset_bottom = 16.0
+rotation = 1.5708
+
+[node name="Quit" type="Label" parent="Buttons"]
 modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 592.0
-offset_top = 568.0
-offset_right = 1107.0
-offset_bottom = 666.0
+offset_left = 550.0
+offset_top = 600.0
+offset_right = 1150.0
+offset_bottom = 700.0
 theme_override_fonts/font = ExtResource("1_wrwbc")
 theme_override_font_sizes/font_size = 80
 text = "Quit
 "
-flat = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Line" type="ColorRect" parent="Buttons/Quit"]
-layout_mode = 0
-offset_left = 112.0
-offset_top = 104.0
-offset_right = 408.0
-offset_bottom = 120.0
-color = Color(0.160784, 0.0862745, 0.113725, 1)
+[node name="Lines" type="Node2D" parent="Buttons/Quit"]
+position = Vector2(85, 0)
 
-[node name="Panel" type="Panel" parent="."]
-offset_left = 560.0
-offset_top = 448.0
-offset_right = 1144.0
-offset_bottom = 576.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_qpn85")
+[node name="Line" type="ColorRect" parent="Buttons/Quit/Lines"]
+offset_left = -64.0
+offset_top = 100.0
+offset_right = 504.0
+offset_bottom = 116.0
 
-[node name="Label" type="Label" parent="Panel"]
-modulate = Color(0.980392, 0.580392, 0.584314, 1)
-layout_mode = 0
-offset_left = 8.0
-offset_top = 24.0
-offset_right = 80.0
-offset_bottom = 105.0
-theme_override_fonts/font = ExtResource("1_wrwbc")
-theme_override_font_sizes/font_size = 21
-text = "To be done"
-autowrap_mode = 2
+[node name="Line2" type="ColorRect" parent="Buttons/Quit/Lines"]
+offset_left = -64.0
+offset_top = -8.0
+offset_right = 504.0
+offset_bottom = 8.0
 
-[connection signal="pressed" from="Buttons/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Buttons/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Buttons/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="Buttons/Quit" to="." method="_on_quit_pressed"]
+[node name="Line4" type="ColorRect" parent="Buttons/Quit/Lines"]
+offset_left = 504.0
+offset_right = 606.0
+offset_bottom = 16.0
+rotation = 1.5708
+
+[node name="Line5" type="ColorRect" parent="Buttons/Quit/Lines"]
+offset_left = -48.0
+offset_right = 54.0
+offset_bottom = 16.0
+rotation = 1.5708

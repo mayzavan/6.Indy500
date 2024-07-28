@@ -1,5 +1,8 @@
 extends Node
 
+@export var musicscene: PackedScene
+@export var AIscene: PackedScene
+
 var msec
 var seconds
 var minutes
@@ -20,7 +23,11 @@ var score :int = 0
 
 var player
 
+@onready var path = $Path2D
+@onready var path_follow = $Path2D/PathFollow2D
+
 func _ready():
+	AIscene = load("res://scenes/a_icar.tscn")
 	player = $Player1
 	tilemap = $TileMap
 	if Global.mode == 'time_attack' or Global.mode == 'time_chall':
@@ -41,6 +48,10 @@ func _ready():
 			6:
 				load_times(Global.map6_times)
 	elif Global.mode == 'drift':
+		musicscene = load("res://scenes/drift_music.tscn")
+		var music = musicscene.instantiate()
+		add_child(music)
+		
 		$Drift.show()
 		match Global.chosen_map:
 			0:
@@ -51,13 +62,41 @@ func _ready():
 				load_drifts(Global.map2_drifts)
 			3:
 				load_drifts(Global.map3_drifts)
+	elif Global.mode == 'vsAI':
+		player.position.y += 16
+		var ai = AIscene.instantiate()
+		ai.position = Vector2(player.position.x,player.position.y-32)
+		match Global.chosen_car:
+			0:
+				ai.max_speed = 210
+				ai.look_ahead = 50
+			1:
+				ai.max_speed = 230
+				ai.look_ahead = 60
+			2:
+				ai.max_speed = 320
+				ai.look_ahead = 80
+			3:
+				ai.max_speed = 370
+				ai.look_ahead = 110
+			4:
+				ai.max_speed = 390
+				ai.look_ahead = 120
+			5:
+				ai.max_speed = 450
+				ai.look_ahead = 130
+			6:
+				ai.max_speed = 170
+				ai.look_ahead = 50
+
+		add_child(ai)
 
 func _input(event):
 	if Input.is_action_just_pressed("Reload"):
-		#Global.savefile()
+		Global.savefile()
 		get_tree().reload_current_scene()
 	if Input.is_action_just_pressed("Esc"):
-		#Global.savefile()
+		Global.savefile()
 		get_tree().change_scene_to_file("res://scenes/choose_mode.tscn")
 
 func _process(delta) -> void:
@@ -171,3 +210,9 @@ func load_drifts(number):
 		bestdrift = number[Global.chosen_car]
 	else:
 		$Drift/Bestscore.text = '----'
+
+func get_path_direction(position):
+	var offset = path.curve.get_closest_offset(position)
+	path_follow.progress = offset
+	print(path_follow.transform.x)
+	return path_follow.transform.x

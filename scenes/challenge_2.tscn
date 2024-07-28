@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c44dgexnwfqrl"]
 
-[ext_resource type="TileSet" uid="uid://dxuay4xb28ufb" path="res://sprites/tilemap.tres" id="1_0uuv2"]
+[ext_resource type="TileSet" uid="uid://dxuay4xb28ufb" path="res://art/sprites/tilemap.tres" id="1_0uuv2"]
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_06g51"]
 [ext_resource type="PackedScene" uid="uid://cmsq7kmxju70o" path="res://scenes/player_1.tscn" id="2_hn1st"]
 [ext_resource type="FontFile" uid="uid://cwo2tc2qtq41u" path="res://karmatic-arcade/ka1.ttf" id="4_e2xyt"]

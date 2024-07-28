@@ -26,46 +26,22 @@ offset_right = 1200.0
 offset_bottom = 720.0
 color = Color(0.980392, 0.580392, 0.584314, 1)
 
-[node name="Back" type="Button" parent="."]
-modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = -24.0
-offset_top = -16.0
-offset_right = 268.0
-offset_bottom = 84.0
-theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 65
-text = "Back"
-flat = true
-
-[node name="Go" type="Button" parent="."]
-modulate = Color(0.160784, 0.0862745, 0.113725, 1)
-offset_left = 624.0
-offset_top = 632.0
-offset_right = 1209.0
-offset_bottom = 719.0
-theme_override_fonts/font = ExtResource("6_x0sx8")
-theme_override_font_sizes/font_size = 65
-text = "Choose car"
-flat = true
-
-[node name="Next" type="Button" parent="."]
-offset_left = 984.0
+[node name="Next" type="TextureRect" parent="."]
+offset_left = 960.0
 offset_top = 152.0
-offset_right = 1056.0
+offset_right = 1032.0
 offset_bottom = 224.0
 scale = Vector2(2.93, 2.93)
-icon = ExtResource("4_gknjx")
-flat = true
+texture = ExtResource("4_gknjx")
 
-[node name="Previous" type="Button" parent="."]
-offset_left = 216.0
+[node name="Previous" type="TextureRect" parent="."]
+offset_left = 240.0
 offset_top = 360.0
-offset_right = 288.0
+offset_right = 312.0
 offset_bottom = 432.0
 rotation = 3.14159
 scale = Vector2(2.93, 2.93)
-icon = ExtResource("4_gknjx")
-flat = true
+texture = ExtResource("4_gknjx")
 
 [node name="Maps" type="CanvasLayer" parent="."]
 
@@ -537,8 +513,3 @@ scale = Vector2(0.3, 0.3)
 theme_override_fonts/font = ExtResource("6_x0sx8")
 theme_override_font_sizes/font_size = 60
 text = "00"
-
-[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="Go" to="." method="_on_go_pressed"]
-[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
